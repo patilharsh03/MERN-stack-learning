@@ -82,7 +82,7 @@ const updateNote = asyncHandler(async (req, res) => {
 
     const updatedNote = await note.save()
 
-    res.json({ message: `${updatedNote.title} updated`})
+    res.json(`${updatedNote.title} updated`)
 
 })
 
@@ -105,7 +105,7 @@ const deleteNote = asyncHandler(async (req, res) => {
 
     const result = await note.deleteOne()
 
-    const reply = `Note ${result.title} with ID ${result.id} deleted`
+    const reply = `Note ${result.title} with ID ${result._id} deleted`
 
     res.json(reply)
 })
