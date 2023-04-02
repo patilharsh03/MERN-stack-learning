@@ -23,10 +23,11 @@ const noteSchema = new mongoose.Schema({
     timestamps: true
 })
 
-noteSchema.plugin(AutoIncrement, {
-    inc_field: 'ticket',
-    id: 'ticketNums',
-    start_seq: 500
-})
+// noteSchema.plugin(AutoIncrement, {
+//     inc_field: 'ticket',
+//     id: 'ticketNums',
+//     start_seq: 500,
+//     disable_hooks: true
+// }) // this is not working 
 
 module.exports = mongoose.model('Note', noteSchema)
